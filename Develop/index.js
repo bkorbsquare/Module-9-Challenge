@@ -6,7 +6,7 @@ console.log('Are you ready to generate a README!?')
 console.log('Answer the following questions to generate a README for your project')
 
 // TODO: Create an array of questions for user input
-const questions = [inquirer.prompt([
+const questions = [
       {
         type: 'input',
         name: 'title',
@@ -35,14 +35,13 @@ const questions = [inquirer.prompt([
         type: 'input',
         name: 'contrabutions',
         message: 'Which collaborators would you like to credit?',
-        default: 'Highlander',
+        default: 'Highlander', //There can be only one. =)
       },
       {
         type: 'checkbox',
         name: 'license',
         message: 'Choose a license:',
-        choices: ['Apache-2.0','BSD 2-Clause','BSD 3-Clause','EPL-2.0','GPL-2.0','GPL-3.0','MIT','MPL-2.0','N/A'],
-        default: 'N/A',
+        choices: ['isc','mit','cc','gpl','N/A'],
       },
       {
         type: 'input',
@@ -56,7 +55,7 @@ const questions = [inquirer.prompt([
         message: 'What is your email address?',
         default: 'yourname@gmail.com',
       },
-    ])];
+    ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {

@@ -2,28 +2,27 @@
 function generateMarkdown(data) {
   return `# ${data.title}
   ## License:
-  [![license](https://img.shields.io/badge/license-${data.license}-blue.svg)]
-  ##Table of Contents
-  -[Description](#description)
-  -[Installation](#installation)
-  -[Usage](#usage)
-  -[Contributions](#contributions)
-  -[Contact](#contact-information)
+  [![license](https://img.shields.io/badge/license-${data.license}-blue.svg)](https://shields.io/)
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributions](#contributions)
+  - [Contact](#contact-information)
 
-  ##Description:
+  ## Description:
   ${data.description}
-  ##Installation:
+  ## Installation:
   ${data.installation}
-  ##Usage:
+  ## Usage:
   ${data.usage}
-  ##License:
+  ## License:
   ${data.license}
-  ##Contributions:
+  ## Contributions:
   ${data.contrabutions}
-  ##Contact Information:
-  -Github: [${data.github}]
-  -Email: [${data.email}]
-`;
+  ## Contact Information:
+  - Github: [${data.github}]
+  - Email: [${data.email}] `;
 }
 
 module.exports = generateMarkdown;
