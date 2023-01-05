@@ -1,5 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+console.log('Are you ready to generate a README!?')
+console.log('Answer the following questions to generate a README for your project')
 
 // TODO: Create an array of questions for user input
 const questions = [inquirer.prompt([
@@ -7,51 +11,71 @@ const questions = [inquirer.prompt([
         type: 'input',
         name: 'title',
         message: 'What is your project called?',
+        default: 'Title',
       },
       {
         type: 'input',
         name: 'description',
-        message: 'What was your motivation and process for building?',
+        message: 'What was your motivation for building?',
+        default: 'Homework',
       },
       {
         type: 'input',
         name: 'installation',
         message: 'What are the steps required to install your project?',
+        default: 'npm install',
       },
       {
         type: 'input',
         name: 'usage',
         message: 'How is your project used?',
+        default: 'To generate an mvp for the graders',
       },
       {
         type: 'input',
-        name: 'credits',
+        name: 'contrabutions',
         message: 'Which collaborators would you like to credit?',
+        default: 'Highlander',
       },
       {
-        type: 'list',
+        type: 'checkbox',
         name: 'license',
         message: 'Choose a license:',
-        default: "MIT",
-        choices: [
-          "Apache-2.0",
-          "BSD 2-Clause",
-          "BSD 3-Clause",
-          "EPL-2.0",
-          "GPL-2.0",
-          "GPL-3.0",
-          "MIT",
-          "MPL-2.0",
-          new inquirer.Separator()
-        ]
+        choices: ['Apache-2.0','BSD 2-Clause','BSD 3-Clause','EPL-2.0','GPL-2.0','GPL-3.0','MIT','MPL-2.0','N/A'],
+        default: 'N/A',
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Enter your Github Link',
+        default: 'github.com/yournamehere',
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'What is your email address?',
+        default: 'yourname@gmail.com',
       },
     ])];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      return console.log(err);
+    }
+  console.log('You did it!');
+  });
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions)
+  .then(function (userInput) {
+    console.log(userInput)
+    writeToFile("README.md", generateMarkdown(userInput));
+  });
+};
 
 // Function call to initialize app
 init();
