@@ -1,6 +1,6 @@
 # Title
   ## License:
-  [![license](https://img.shields.io/badge/license-gpl-blue.svg)](https://shields.io/)
+  [![license](https://img.shields.io/badge/license-mit-blue.svg)](https://shields.io/)
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
@@ -15,7 +15,7 @@
   ## Usage:
   To generate an mvp for the graders
   ## License:
-  gpl
+  mit
   ## Contributions:
   Highlander
   ## Contact Information:
