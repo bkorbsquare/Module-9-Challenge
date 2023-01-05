@@ -9,7 +9,7 @@
 
 ## Installation
 
-Run 'npm install' in the terminal.
+On GitHub.com, navigate to the main page of the repository. Above the list of files, click Code. Click Open with GitHub Desktop to clone and open the repository with GitHub Desktop. Follow the prompts in GitHub Desktop to complete the clone. Open the code in your code editor. Open a new terminal, and navigate to the root of the directory and run 'npm install'. 
 
 ## Usage
 
